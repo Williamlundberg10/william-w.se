@@ -326,7 +326,13 @@ function getMMdata(){
     var EL = document.getElementById("E0/10")
     var ML = document.getElementById("M0/10")
     var HL = document.getElementById("H0/10")
+    var I = document.getElementById("I0")
     EL.textContent = L1 + "/10";
     ML.textContent = L2 + "/10";
     HL.textContent = L3 + "/5";
+    if(localStorage.getItem("MP") != 0){
+        I.textContent = localStorage.getItem("MP") || "";
+    }else{
+        I.textContent = ""
+    }
 }
