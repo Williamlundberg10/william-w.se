@@ -27,7 +27,7 @@
 }
 
 body {
-    background-color: #FFFFFF;
+    background-color: #ffffff;
     overflow: hidden;
 }
 
@@ -80,6 +80,7 @@ body {
 .level {
     display: flex;
     flex-direction: column;
+    transition-duration: 0.8s;
     width: 100px;
     height: 100px;
     background-color: #FFFFFF;
@@ -103,6 +104,14 @@ body {
     &.LE{
         border: 8px solid #dadada7f;
     }
+}
+
+.level:hover, .R-Button:hover, .B-Button:hover, .B-Button-L:hover, .D-input:hover {
+    border-radius: 100px;
+}
+
+.I-input:hover, .B-input:hover, .D-input-I:hover{
+    border-radius: 5px;
 }
 
 .E1{
@@ -129,6 +138,7 @@ body {
 
 .R-Button{
     margin: 10px 10px;
+    transition-duration: 0.8s;
     position: fixed;
     display: flex;
     flex-direction: column;
@@ -144,6 +154,7 @@ body {
 
 .B-Button{
     margin: 10px 10px;
+    transition-duration: 0.8s;
     position: fixed;
     display: flex;
     flex-direction: column;
@@ -159,6 +170,7 @@ body {
 
 .B-Button-L{
     display: flex;
+    transition-duration: 0.8s;
     flex-direction: column;
     width: 100px;
     height: 100px;
@@ -173,6 +185,7 @@ body {
 .D-input{
     display: flex;
     flex-direction: column;
+    transition-duration: 0.8s;
     width: 500px;
     height: 100px;
     background-color: #ffffff7f;
@@ -186,6 +199,7 @@ body {
 .I-input{
     display: flex;
     flex-direction: column;
+    transition-duration: 0.8s;
     width: 330px;
     height: 30px;
     background-color: #ffffff7f;
@@ -200,6 +214,7 @@ body {
 .B-input{
     display: flex;
     flex-direction: column;
+    transition-duration: 0.8s;
     width: 150px;
     height: 50px;
     background-color: #ffffff7f;
@@ -213,6 +228,7 @@ body {
 .D-input-I{
     display: flex;
     flex-direction: column;
+    transition-duration: 0.8s;
     width: 240px;
     height: 50px;
     background-color: #ffffff7f;

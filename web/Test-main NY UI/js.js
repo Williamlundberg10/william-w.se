@@ -298,3 +298,35 @@ document.addEventListener('keydown', function(event) {
 function NNNQQ() {
     document.getElementById('pop').className = 'BOXQQQQ q1';
 }
+
+function getMMdata(){
+    var L1 = 0;
+    var L2 = 0;
+    var L3 = 0;
+
+    console.log(MM.length);
+    for (let i = 0; i < MM.length; i++) {
+        // Create a new string with all replacements
+        let cleanedString = MM[i]
+            .replace("JA", "").includes("1")
+        console.log(cleanedString);
+        if(MM[i].includes("JA")){
+            if(MM[i].includes("E")){
+                L1++
+            }
+            if(MM[i].includes("M")){
+                L2++
+            }
+            if(MM[i].includes("H")){
+                L3++
+            }
+        }
+    }
+    console.log(L1,L2,L3)
+    var EL = document.getElementById("E0/10")
+    var ML = document.getElementById("M0/10")
+    var HL = document.getElementById("H0/10")
+    EL.textContent = L1 + "/10";
+    ML.textContent = L2 + "/10";
+    HL.textContent = L3 + "/5";
+}
