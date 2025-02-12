@@ -1,0 +1,109 @@
+body{
+    margin: 0px;
+    padding: 0px;
+}
+
+.Button {
+    display: flex;
+    flex-direction: column;
+    transition-duration: 0.8s;
+    width: 100px;
+    height: 100px;
+    background-color: #FFFFFF;
+    justify-content: center;
+    align-items: center;
+    border-radius: 35px;
+    border: 8px solid #dadada7f;
+    color: #00000000;
+    box-shadow:0px 0px 4px 2px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    &.O{
+        background-color: #ffffff;
+        color: #000000;
+        border-radius: 35px;
+        border: 8px solid #ffa4a47f;
+        box-shadow:0px 0px 4px 4px rgba(236, 85, 85, 0.357), 0 6px 20px 0 rgba(255, 0, 0, 0.271);
+    }
+    &.X{
+        background-color: #ffffff;
+        color: #000000;
+        border-radius: 35px;
+        border: 8px solid #929dff7f;
+        box-shadow:0px 0px 4px 4px rgba(85, 138, 236, 0.357), 0 6px 20px 0 rgba(0, 0, 255, 0.271);
+    }
+
+}
+
+.Button:hover {
+    background-color: #ffffff;
+    border-radius: 35px;
+    border: 8px solid #0000007f;
+    box-shadow:0px 0px 4px 2px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    &.O{
+        background-color: #ffffff;
+        color: #000000;
+        border-radius: 35px;
+        border: 8px solid #ffa4a47f;
+        box-shadow:0px 0px 4px 4px rgba(236, 85, 85, 0.357), 0 6px 20px 0 rgba(255, 0, 0, 0.271);
+    }
+    &.X{
+        background-color: #ffffff;
+        color: #000000;
+        border-radius: 35px;
+        border: 8px solid #929dff7f;
+        box-shadow:0px 0px 4px 4px rgba(85, 138, 236, 0.357), 0 6px 20px 0 rgba(0, 0, 255, 0.271);
+    }
+
+}
+
+
+.E1{
+    font-size: 35px;
+    font-family: 'Inter';
+    justify-content: center;
+    align-items: center;
+    font-weight: 1000;
+    &.q1{
+        font-size: 20px;
+    }
+}
+
+.gridButton{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    gap: 20px;
+}
+
+.KK{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.popup{
+    font-size: 35px;
+    font-family: 'Inter';
+    justify-content: center;
+    align-items: center;
+    font-weight: 1000;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    transition-duration: 0.8s;
+    width: 500px;
+    height: 70px;
+    background-color: #FFFFFF;
+    justify-content: center;
+    align-items: center;
+    border-radius: 35px;
+    border: 8px solid #dadada7f;
+    top: 20px;
+    left: 50%;
+    transform: translate(-50%, -150%);
+    box-shadow: 0px 0px 4px 2px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    &.on{
+        transform: translate(-50%, -10%);
+    }
+}
