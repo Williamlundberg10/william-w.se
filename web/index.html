@@ -48,7 +48,7 @@
 <body>
   <div class="bookmark-container">
     <a href="javascript:(function(){try{var t=localStorage.getItem('@token_v2'),d=JSON.parse(t),p=window.location.pathname.split('/').pop(),e=document.querySelector('._Typography_1fly9_1'),i=parseInt(e.textContent)-1;fetch(`https://api.matteappen.se/v2/exercises/${p}?fetchAll=0`,{method:'GET',headers:{Authorization:d.access,Accept:'application/json, text/plain, */*'}}).then(r=>r.json()).then(a=>{if(!a||!a.problems||!a.problems[i])return;const o=a.problems[i];if(0===o.answerType)o.answer.forEach(s=>{let c=document.querySelector('.descriptionText');if(!c)return;let n=document.createElement('p');n.textContent='Answer:\n'+s,n.style.fontSize='25px',n.style.color='#128baf',c.appendChild(n)});else if(1===o.answerType||2===o.answerType){const l=document.querySelectorAll('._ChoiceInputButtonsRegular_d46a8_87 div');o.answer.forEach(s=>{l.forEach(f=>{if(f.id){var m=document.getElementById(f.id),u=m.querySelector('annotation')||m.querySelector('p');u&&('$'+u.textContent+'$'===s||u.textContent===s)?m.parentNode.style.border='4px solid #1a8a34':1===o.answerType&&(m.parentNode.style.border='0px')}})})}else if(3===o.answerType){const l=document.querySelectorAll('._ChoiceInputButtonsRegular_d46a8_87 div');let c=1;o.answer.forEach(s=>{l.forEach(f=>{if(f.id){var m=document.getElementById(f.id),u=m.querySelector('annotation')||m.querySelector('p');u&&('$'+u.textContent+'$'===s||u.textContent===s)&&(u.textContent=c)}}),c++})}}).catch(e=>console.error(e))}catch(e){console.error(e)}})();">
-      <button type="button">Magma</button>
+      <button type="button">Magma_V1</button>
     </a>
   </div>
 </body>
