@@ -17,7 +17,7 @@
 
     function connect() {
       const server = document.getElementById("ip").value;
-      socket = new WebSocket("ws://" + server);
+      socket = new WebSocket("wss://" + server);
 
       socket.onopen = () => {
         document.getElementById("status").innerText = "Connected!";
