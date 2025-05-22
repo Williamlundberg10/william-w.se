@@ -17,6 +17,7 @@
 
     function connect() {
       const server = document.getElementById("ip").value;
+      console.log(server)
       socket = new WebSocket(server);
 
       socket.onopen = () => {
