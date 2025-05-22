@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Connect to WebSocket</title>
+</head>
+<body>
+  <h2>Connect to Host</h2>
+  <input id="ip" placeholder="ws://123.123.123.123:8765">
+  <button onclick="connect()">Connect</button>
+  <p id="status">Not connected</p>
+  <input id="msg" placeholder="Message">
+  <button onclick="send()">Send</button>
+  <pre id="log"></pre>
+
+  <script>
+    let socket;
+
+    function connect() {
+      const server = document.getElementById("ip").value;
+      socket = new WebSocket(server);
+
+      socket.onopen = () => {
+        document.getElementById("status").innerText = "Connected!";
+      };
+
+      socket.onmessage = (e) => {
+        log("Server: " + e.data);
+      };
+
+      socket.onclose = () => {
+        document.getElementById("status").innerText = "Disconnected.";
+      };
+    }
+
+    function send() {
+      const msg = document.getElementById("msg").value;
+      socket.send(msg);
+      log("You: " + msg);
+    }
+
+    function log(txt) {
+      document.getElementById("log").textContent += txt + "\n";
+    }
+  </script>
+</body>
+</html>
