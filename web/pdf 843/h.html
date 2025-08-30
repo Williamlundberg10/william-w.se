@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HTML to PDF</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inika:wght@400;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Fredoka:wght@300..700&family=Inika:wght@400;700&display=swap');
+
+        .vv{
+            display: flex; 
+            flex-direction: column; 
+            width: 793px; 
+            height: 1122px; 
+            gap: 45px; 
+            image-rendering: auto;
+            justify-content: center; 
+            align-items: center;
+        }
+
+        .archivo-black-regular {
+            font-family: "Archivo Black", sans-serif;
+            font-weight: 600;
+            font-style: normal;
+        }
+
+            
+        .oo{
+            display: flex;
+            width: 490px;
+            height: 290px;
+            background-color: rgb(237, 237, 237);
+            border-radius: 25px;
+            border-color: rgb(0, 0, 0);
+            border-style: solid;
+            border-width: 7px;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Inika', serif;
+            font-weight: 600;
+            font-style: normal;
+            font-size: 48px;
+            color: white;
+        }
+        
+        .poo{
+            display: flex;
+            flex-direction: column;
+            transition-duration: 0.4s;
+            gap: 5px;
+            width: 180px;
+            height: 50px;
+            border-radius: 80px;
+            border-color: rgb(220, 220, 220);
+            border-style: solid;
+            border-width: 3px;
+            background-color: rgb(255, 255, 255);
+            padding: 10px;
+            margin: 10px;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            &:hover{
+                background-color: rgb(202, 202, 202);
+                border-color: rgb(185, 185, 185);
+            }
+        }
+
+        
+    </style>
+</head>
+<body>
+    <button id="bbp" class="poo archivo-black-regular" onclick="bb()">X</button>
+    <button class="poo archivo-black-regular" onclick="downloadPDF()">Download as PDF</button>
+    <button class="poo archivo-black-regular" onclick="printPage()">Skriv ut</button>
+    <div id="content" class="vv">
+        <div class="vv">
+            <div id="q1" class="oo">hej</div>
+            <div id="q2" class="oo"></div>
+            <div id="q3" class="oo"></div>
+        </div>
+    </div>
+    <br>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
+    <script src="k.js"></script>
+    <script>
+        function downloadPDF() {
+            const element = document.getElementById("content");
+            html2pdf()
+                .from(element)
+                .set({
+                    margin: 0,
+                    filename: "myfile.pdf",
+                    html2canvas: { scale: 1 },
+                    jsPDF: { orientation: "portrait", unit: "mm", format: "a4" }
+                })
+                .save();
+        }
+
+        function printPage() {
+            const content = document.getElementById("content").innerHTML;
+            const printWindow = window.open("", "_blank");
+            printWindow.document.write(`
+                <html>
+                    <head>
+                        <title>Skriv ut</title>
+                        <style>
+                            @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inika:wght@400;700&display=swap');
+                            @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Fredoka:wght@300..700&family=Inika:wght@400;700&display=swap');
+
+                            .vv {
+                                display: flex; 
+                                flex-direction: column; 
+                                width: 793px; 
+                                height: 1122px; 
+                                gap: 45px; 
+                                image-rendering: auto;
+                                justify-content: center; 
+                                align-items: center;
+                            }
+
+                            .archivo-black-regular {
+                                font-family: "Archivo Black", sans-serif;
+                                font-weight: 600;
+                                font-style: normal;
+                            }
+
+                            .oo {
+                                display: flex;
+                                width: 490px;
+                                height: 290px;
+                                background-color: rgb(237, 237, 237);
+                                border-radius: 25px;
+                                border-color: rgb(0, 0, 0);
+                                border-style: solid;
+                                border-width: 7px;
+                                justify-content: center;
+                                align-items: center;
+                                font-family: 'Inika', serif;
+                                font-weight: 800;
+                                font-style: normal;
+                                font-size: 48px;
+                                color: white;
+                            }
+                            
+                            .poo {
+                                display: flex;
+                                flex-direction: column;
+                                transition-duration: 0.4s;
+                                gap: 5px;
+                                width: 180px;
+                                height: 50px;
+                                border-radius: 80px;
+                                border-color: rgb(220, 220, 220);
+                                border-style: solid;
+                                border-width: 3px;
+                                background-color: rgb(255, 255, 255);
+                                padding: 10px;
+                                margin: 10px;
+                                align-items: center;
+                                justify-content: center;
+                                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+                                            0 6px 20px 0 rgba(0, 0, 0, 0.19);
+                            }
+
+                            .poo:hover {
+                                background-color: rgb(202, 202, 202);
+                                border-color: rgb(185, 185, 185);
+                            }
+                        </style>
+                    </head>
+                    <body>
+                        ${content}
+                    </body>
+                </html>
+            `);
+            printWindow.document.close();
+            printWindow.print();
+        }
+
+
+        function bb(){
+            window.location.href = "index.html";
+        }
+    </script>
+</body>
+</html>

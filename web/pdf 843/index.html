@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HTML to PDF</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="qw">
+        <div id="content" class="bg">
+            <div onclick="switchTab(1)" id="content_1" class="oo">
+                <h1 id="tt_1"></h1>
+            </div>
+
+            <div onclick="switchTab(2)" id="content_2" class="oo">
+                <h1 id="tt_2"></h1>
+            </div>
+
+            <div onclick="switchTab(3)" id="content_3" class="oo">
+                <h1 id="tt_3"></h1>
+            </div>
+        </div>
+        <br>
+
+        <div class="qww">
+            <div class="asq">
+                <div class="bil" onclick="abcd('ma')"><img src="bilder/MA.svg"></div>
+                <div class="bil" onclick="abcd('bl')"><img src="bilder/BL.svg"></div>
+                <div class="bil" onclick="abcd('en')"><img src="bilder/EN.svg"></div>
+                <div class="bil" onclick="abcd('hkk')"><img src="bilder/HKK.svg"></div>
+                <div class="bil" onclick="abcd('idh')"><img src="bilder/IDH.svg"></div>
+                <div class="bil" onclick="abcd('mu')"><img src="bilder/MU.svg"></div>
+                <div class="bil" onclick="abcd('no')"><img src="bilder/NO.svg"></div>
+                <div class="bil" onclick="abcd('sl')"><img src="bilder/SL.svg"></div>
+                <div class="bil" onclick="abcd('so')"><img src="bilder/SO.svg"></div>
+                <div class="bil" onclick="abcd('sv')"><img src="bilder/SV.svg"></div>
+                <div class="bil" onclick="abcd('tk')"><img src="bilder/TK.svg"></div>
+            </div>
+
+            <div id="add12" class="bgge">
+            </div>
+
+            <div class="all">
+                <div class="nv">
+                    <div class="archivo-black-regular">Background Color</div>
+                    <div>
+                        <label id="colorp1" class="llll" for="colorp"></label>
+                        <input class="mmmm" type="color" id="colorp">
+                    </div>
+                    
+                </div>
+
+                <div class="nv">
+                    <div class="archivo-black-regular">Name</div>
+                    <input class="df archivo-black-regular" type="text" id="textp">
+                </div>
+
+                <div class="nv">
+                    <div class="archivo-black-regular">Font size</div>
+                    <input class="df archivo-black-regular" type="number" value="120" id="numderp">
+                </div>
+            </div>
+
+            <div class="all">
+                <div class="nv">
+                    <div class="archivo-black-regular">Name color</div>
+                    <div>
+                        <label id="colorpp1" class="llll" for="colorpp"></label>
+                        <input class="mmmm" type="color" id="colorpp">
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="all">
+                <button class="poo archivo-black-regular" onclick="downloadPDF()">Download</button>
+                <button class="poo archivo-black-regular" onclick="save()">Save</button>
+                <button class="poo archivo-black-regular" onclick="generateShareURL()">Share</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js.js"></script>
+    <script>
+        function downloadPDF() {
+            window.location.href = "h.html";
+        }
+    </script>
+</body>
+</html>
