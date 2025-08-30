@@ -13,7 +13,7 @@ const colorPreview2 = document.getElementById("colorpp1");
 
 // Default fallback values
 const defaultColor = "#ededed";
-const defaultNameColor = "#ffffffff";
+const defaultNameColor = "#ffffff";
 const defaultFontSize = 120;
 
 // Initialize page
@@ -70,6 +70,7 @@ function switchTab(tab) {
     colorPreview.style.backgroundColor = colorInput.value;
     colorInput2.value = localStorage.getItem(`name color ${tabId}`) || defaultColor;
     colorPreview2.style.backgroundColor = colorInput2.value;
+    console.log(colorInput2.value)
     textInput.value = localStorage.getItem(`Name ${tabId}`) || "";
     sizeInput.value = parseInt(localStorage.getItem(`Font_size ${tabId}`)) || defaultFontSize;
 }
@@ -115,17 +116,17 @@ function handleSizeChange(e) {
 
 // Predefined quick themes
 const themes = {
-    ma:  { color: "#3D921F", text: "MA", text_color: "#ffffffff" },
-    bl:  { color: "#BD6621", text: "BL", text_color: "#ffffffff" },
-    en:  { color: "#4C275D", text: "EN", text_color: "#ffffffff" },
-    hkk: { color: "#2A6FAD", text: "HKK", text_color: "#ffffffff" },
-    idh: { color: "#B43A2F", text: "IDH", text_color: "#ffffffff" },
-    mu:  { color: "#9bae2d", text: "MU", text_color: "#ffffffff" },
-    no:  { color: "#7C9E39", text: "NO", text_color: "#ffffffff" },
-    sl:  { color: "#25305C", text: "SL", text_color: "#ffffffff" },
-    so:  { color: "#9D2F52", text: "SO", text_color: "#ffffffff" },
-    sv:  { color: "#7B2820", text: "SV", text_color: "#ffffffff" },
-    tk:  { color: "#3B6386", text: "TK", text_color: "#ffffffff" }
+    ma:  { color: "#3D921F", text: "MA", text_color: "#ffffff" },
+    bl:  { color: "#BD6621", text: "BL", text_color: "#ffffff" },
+    en:  { color: "#4C275D", text: "EN", text_color: "#ffffff" },
+    hkk: { color: "#2A6FAD", text: "HKK", text_color: "#ffffff" },
+    idh: { color: "#B43A2F", text: "IDH", text_color: "#ffffff" },
+    mu:  { color: "#9bae2d", text: "MU", text_color: "#ffffff" },
+    no:  { color: "#7C9E39", text: "NO", text_color: "#ffffff" },
+    sl:  { color: "#25305C", text: "SL", text_color: "#ffffff" },
+    so:  { color: "#9D2F52", text: "SO", text_color: "#ffffff" },
+    sv:  { color: "#7B2820", text: "SV", text_color: "#ffffff" },
+    tk:  { color: "#3B6386", text: "TK", text_color: "#ffffff" }
 };
 
 // Apply predefined theme by ID
@@ -233,4 +234,3 @@ function generateShareURL() {
     const url = `${window.location.origin}/william-w.se/web/pdf%20843/h.html?c=1&color1=${color1}&color2=${color2}&color3=${color3}&name_color1=${name_color1}&name_color2=${name_color2}&name_color3=${name_color3}&text1=${text1}&text2=${text2}&text3=${text3}&size1=${size1}&size2=${size2}&size3=${size3}`;
     prompt("Copy this shareable URL:", url);
 }
-
