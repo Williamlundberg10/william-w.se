@@ -176,8 +176,8 @@ function save() {
     }
 
     const data_html = `
-        <div id="${s4}" style="font-size: ${s3}px; background-color: ${colorInput.value};" class="bil_q" onclick="abcdff('${s2}','${colorInput.value}','${sizeInput.value}','${colorPreview2.style.backgroundColor}')">
-            <div style="color: ${colorPreview2.style.backgroundColor};" class="kdd">${s2}</div>
+        <div id="${s4}" style="font-size: ${s3}px; background-color: ${colorInput.value};" class="bil_q" onclick="abcdff('${s2}','${colorInput.value}','${sizeInput.value}','${colorInput2.value}')">
+            <div style="color: ${colorInput2.value};" class="kdd">${s2}</div>
         </div>
     `;
 
@@ -193,7 +193,7 @@ function save() {
         id: s4,
         text: s2,
         color: colorInput.value,
-        color2: colorPreview2.style.backgroundColor,
+        color2: colorInput2.value,
         size2: s3,
         size: sizeInput.value
     });
