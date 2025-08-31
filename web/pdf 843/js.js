@@ -116,46 +116,47 @@ function handleSizeChange(e) {
 
 // Predefined quick themes
 const themes = {
-    ma:  { color: "#3D921F", text: "MA", text_color: "#ffffff" },
-    bl:  { color: "#BD6621", text: "BL", text_color: "#ffffff" },
-    en:  { color: "#4C275D", text: "EN", text_color: "#ffffff" },
-    hkk: { color: "#2A6FAD", text: "HKK", text_color: "#ffffff" },
-    idh: { color: "#B43A2F", text: "IDH", text_color: "#ffffff" },
-    mu:  { color: "#9bae2d", text: "MU", text_color: "#ffffff" },
-    no:  { color: "#7C9E39", text: "NO", text_color: "#ffffff" },
-    sl:  { color: "#25305C", text: "SL", text_color: "#ffffff" },
-    so:  { color: "#9D2F52", text: "SO", text_color: "#ffffff" },
-    sv:  { color: "#7B2820", text: "SV", text_color: "#ffffff" },
-    tk:  { color: "#3B6386", text: "TK", text_color: "#ffffff" }
+    ma:  { color: "#3D921F", text: "MA", size: 120, text_color: "#ffffff" },
+    bl:  { color: "#BD6621", text: "BL", size: 120, text_color: "#ffffff" },
+    en:  { color: "#4C275D", text: "EN", size: 120, text_color: "#ffffff" },
+    hkk: { color: "#2A6FAD", text: "HKK", size: 120, text_color: "#ffffff" },
+    idh: { color: "#B43A2F", text: "IDH", size: 120, text_color: "#ffffff" },
+    mu:  { color: "#9bae2d", text: "MU", size: 120, text_color: "#ffffff" },
+    no:  { color: "#7C9E39", text: "NO", size: 120, text_color: "#ffffff" },
+    sl:  { color: "#25305C", text: "SL", size: 120, text_color: "#ffffff" },
+    so:  { color: "#9D2F52", text: "SO", size: 120, text_color: "#ffffff" },
+    sv:  { color: "#7B2820", text: "SV", size: 120, text_color: "#ffffff" },
+    tk:  { color: "#3B6386", text: "TK", size: 120, text_color: "#ffffff" },
+    lunch:  { color: "#ffffff", text: "LUNCH", size: 90, text_color: "#000000" }
 };
 
 // Apply predefined theme by ID
 function abcd(themeId) {
     if (!(themeId in themes)) return;
 
-    const { color, text, text_color } = themes[themeId];
+    const { color, text, size, text_color } = themes[themeId];
     colorInput.value = color;
     colorInput2.value = text_color;
     textInput.value = text;
-    sizeInput.value = 120;
+    sizeInput.value = size;
 
     handleColorChange({ target: { value: color } });
     handleColorChange2({ target: { value: text_color } });
     handleTextChange({ target: { value: text } });
-    handleSizeChange({ target: { value: 120 } });
+    handleSizeChange({ target: { value: size } });
 }
 
-function abcdff(text,color,s,color2) {
+function abcdff(text,color,size,color2) {
 
     colorInput.value = color;
     colorInput2.value = color2;
     textInput.value = text;
-    sizeInput.value = s;
+    sizeInput.value = size;
 
     handleColorChange({ target: { value: color } });
     handleColorChange2({ target: { value: color2 } });
     handleTextChange({ target: { value: text } });
-    handleSizeChange({ target: { value: s } });
+    handleSizeChange({ target: { value: size } });
 }
 
 function save() {
