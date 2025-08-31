@@ -232,5 +232,5 @@ function generateShareURL() {
     const size3 = encodeURIComponent(localStorage.getItem(`Font_size tt_3`) || defaultFontSize);
 
     const url = `${window.location.origin}/william-w.se/web/pdf%20843/h.html?c=1&color1=${color1}&color2=${color2}&color3=${color3}&name_color1=${name_color1}&name_color2=${name_color2}&name_color3=${name_color3}&text1=${text1}&text2=${text2}&text3=${text3}&size1=${size1}&size2=${size2}&size3=${size3}`;
-    prompt("Copy this shareable URL:", url);
+    prompt("Share this URL:", url);
 }
