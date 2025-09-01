@@ -54,4 +54,5 @@ setInterval(() => {
     body: "This is an automatic notification 🚀",
     icon: "icons/s.png"
   });
-}, 30000);
+}, 30);
+
