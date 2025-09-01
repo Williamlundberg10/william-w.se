@@ -15,7 +15,6 @@ body {
   padding: 20px;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-  max-width: 350px;
 }
 
 button {
@@ -26,7 +25,6 @@ button {
   border-radius: 8px;
   font-size: 16px;
   cursor: pointer;
-  margin-top: 10px;
 }
 
 button:hover {
@@ -37,29 +35,4 @@ button:hover {
   margin-top: 10px;
   font-size: 14px;
   color: #555;
-}
-
-/* Toast Notification */
-#toast {
-  visibility: hidden;
-  min-width: 220px;
-  margin-left: -110px;
-  background-color: #333;
-  color: #fff;
-  text-align: center;
-  border-radius: 8px;
-  padding: 12px;
-  position: fixed;
-  left: 50%;
-  bottom: 30px;
-  font-size: 16px;
-  z-index: 1000;
-  opacity: 0;
-  transition: opacity 0.5s, bottom 0.5s;
-}
-
-#toast.show {
-  visibility: visible;
-  opacity: 1;
-  bottom: 50px;
 }
