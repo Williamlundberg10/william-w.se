@@ -29,6 +29,7 @@
 }
 
 .c{
+    transition-duration: 0.4s;
     display: flex;
     flex-direction: row;
     font-family: "Kavoon", serif;
@@ -74,7 +75,6 @@
 .mm{
     width: 100%;
     height: 100vh;
-    background-color: antiquewhite;
     display: flex;
     flex-direction: column;
     align-items: center;

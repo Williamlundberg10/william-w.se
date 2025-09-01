@@ -22,7 +22,7 @@
 </head>
 <body>
     <div class="mm">
-        <div>
+        <div id="df">
             <div class="aa">
                 <h1>SV</h1>
                 <h2>12:00-13:00</h2>
@@ -80,18 +80,18 @@
         </div>
 
         <div class="asq">
-            <button class="c q">ppp</button>
-            <button class="c q">ppp</button>
-            <button class="c">ppp</button>
-            <button class="c q">ppp</button>
-            <button class="c q">ppp</button>
+            <button onclick="kk(1)" id="qq_1" class="c q">mån</button>
+            <button onclick="kk(2)" id="qq_2" class="c q">tis</button>
+            <button onclick="kk(3)" id="qq_3" class="c">ons</button>
+            <button onclick="kk(4)" id="qq_4" class="c q">tor</button>
+            <button onclick="kk(5)" id="qq_5" class="c q">fre</button>
         </div>
     </div>
 
     <script src="script.js"></script>
 
   <script>
-    if ("serviceWorker" in navigator) {
+    if ("serviceWorker1" in navigator) {
       navigator.serviceWorker.register("service-worker.js")
         .then(() => console.log("✅ Service Worker Registered"))
         .catch(err => console.error("Service Worker Failed:", err));
